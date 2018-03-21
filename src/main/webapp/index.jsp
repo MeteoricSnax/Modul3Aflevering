@@ -12,10 +12,13 @@
         <title>Welcome page</title>
     </head>
     <body>
+        
+        <%@include file="includes/menu.jsp" %>
+        
         <h1>Welcome to Sem 2</h1>
         
         <table>
-            <tr><td>Login</td>
+            <tr>Login
                 <td>
                     <form name="login" action="FrontController" method="POST">
                         <input type="hidden" name="command" value="login">
@@ -28,7 +31,7 @@
                         <input type="submit" value="Submit">
                     </form>
                 </td>
-                <td>Or Register</td>
+                <td> Or Register</td>
                 <td>
                     <form name="register" action="FrontController" method="POST">
                         <input type="hidden" name="command" value="register">
@@ -46,6 +49,9 @@
                 </td>
             </tr>
         </table>
+        
+        <a href="FrontController?command=help" >Få hjælp til din bestilling!</a>
+        
         <% String error = (String) request.getAttribute( "error");
            if ( error != null) { %>
            <H2>Error!!</h2>

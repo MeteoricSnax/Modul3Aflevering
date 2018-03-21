@@ -4,6 +4,7 @@
     Author     : kasper
 --%>
 
+<%@page import="FunctionLayer.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -11,7 +12,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Customer home page</title>
     </head>
+    <%User user = (User) session.getAttribute("email");%> 
     <body>
+        <%@include file="includes/topmenu.jsp" %>
+        
+       
+        <h2>kage: <%=request.getParameter("password")%></h2>
         <h1>Hello <%=request.getParameter( "email" )%> </h1>
         You are now logged in as a customer of our wonderful site.
     </body>
