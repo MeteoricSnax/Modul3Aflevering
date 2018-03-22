@@ -23,8 +23,13 @@
     }
 </style>
 
+
+
 <div class="topMenu">
     <a href="FrontController?command=customerpage" class="button">Home</a>
     <a href="FrontController?command=orderBlocks" class="button">Order</a>
+    <a href="FrontController?command=shoppingcart" class="button">Shopping cart</a>
+    
+    
 
 </div>

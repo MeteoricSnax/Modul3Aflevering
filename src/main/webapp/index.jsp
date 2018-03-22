@@ -17,6 +17,8 @@
         
         <h1>Welcome to Sem 2</h1>
         
+        <p>Logged in as: <%=session.getAttribute("email")%>.</p>
+        
         <table>
             <tr>Login
                 <td>

@@ -12,13 +12,17 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Customer home page</title>
     </head>
-    <%User user = (User) session.getAttribute("email");%> 
+    
+
     <body>
         <%@include file="includes/topmenu.jsp" %>
+        <h1>sessiontest: <%=session.getAttribute("id")  %> </h1>
         
-       
-        <h2>kage: <%=request.getParameter("password")%></h2>
-        <h1>Hello <%=request.getParameter( "email" )%> </h1>
-        You are now logged in as a customer of our wonderful site.
+        <h1>logged in as <%=session.getAttribute("role")%>: <%=session.getAttribute("email")%>. </h1>
+        
+        <a href="FrontController?command=logOut" class="button">Log Out</a>
+
+ 
+        
     </body>
 </html>
