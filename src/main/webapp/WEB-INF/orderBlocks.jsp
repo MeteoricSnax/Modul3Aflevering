@@ -13,10 +13,9 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <%User user = (User) session.getAttribute("email");%> 
-
         <%@include file="includes/topmenu.jsp" %>
         <h1>Order Blocks here</h1>
+        <p>Logged in as: <%=session.getAttribute("email")%>.</p>
         
         
         
