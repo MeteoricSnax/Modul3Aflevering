@@ -1,7 +1,9 @@
 package DBAccess;
 
+import static DBAccess.Connector.connection;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 /**
