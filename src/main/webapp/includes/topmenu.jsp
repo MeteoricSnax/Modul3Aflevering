@@ -31,14 +31,14 @@
 <%}else if(session.getAttribute("role").equals("employee")){%>
     <div class="topMenu">
     <a href="FrontController?command=employeepage" class="button">Home</a>
-    <a href="FrontController?command=orderBlocks" class="button">Order</a>
+    <a href="FrontController?command=orderBlocks" class="button">Place Order</a>
     <a href="FrontController?command=vieworders" class="button">View Orders</a>
 </div>
 <%}else{%>
 <div class="topMenu">
     <a href="FrontController?command=customerpage" class="button">Home</a>
-    <a href="FrontController?command=orderBlocks" class="button">Order</a>
-    <a href="FrontController?command=shoppingcart" class="button">Shopping cart</a>
+    <a href="FrontController?command=orderBlocks" class="button">Place Order</a>
+    <a href="FrontController?command=customerorders" class="button">Your Orders</a>
 </div>
 <%}%>
 

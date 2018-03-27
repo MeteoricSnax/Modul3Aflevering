@@ -21,7 +21,8 @@ abstract class Command {
         commands.put( "shoppingcart", new Shoppingcart() );
         commands.put( "productv2", new Productv2() ); 
         commands.put( "employeepage", new Employeepage() );
-        commands.put( "vieworders", new ViewOrders());
+        commands.put( "vieworders", new ViewOrders() );
+        commands.put( "customerorders", new CustomerOrders() );
     }
 
     static Command from( HttpServletRequest request ) {

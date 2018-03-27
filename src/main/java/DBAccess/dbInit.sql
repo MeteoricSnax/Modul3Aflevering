@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `useradmin` /*!40100 DEFAULT CHARACTER SET utf8 *
 USE `useradmin`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: localhost    Database: useradmin
+-- Host: 127.0.0.1    Database: useradmin
 -- ------------------------------------------------------
 -- Server version	5.7.20-log
 
@@ -25,15 +25,15 @@ DROP TABLE IF EXISTS `orders`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `orders` (
-  `idOrders` int(11) NOT NULL AUTO_INCREMENT,
+  `orderId` int(11) NOT NULL AUTO_INCREMENT,
   `userId` int(11) NOT NULL,
-  `block1` int(11) DEFAULT NULL,
-  `block2` int(11) DEFAULT NULL,
-  `block4` int(11) DEFAULT NULL,
+  `length` int(11) DEFAULT NULL,
+  `depth` int(11) DEFAULT NULL,
+  `height` int(11) DEFAULT NULL,
   `delivered` tinyint(4) NOT NULL,
-  PRIMARY KEY (`idOrders`),
-  UNIQUE KEY `idOrders_UNIQUE` (`idOrders`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`orderId`),
+  UNIQUE KEY `idOrders_UNIQUE` (`orderId`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (1,1,1,1,1,0);
+INSERT INTO `orders` VALUES (1,1,1,1,1,0),(2,3,23,23,1,0),(3,4,12,12,12,0);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -82,4 +82,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-26 18:30:03
+-- Dump completed on 2018-03-28  0:15:42

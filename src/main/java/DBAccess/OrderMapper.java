@@ -15,7 +15,7 @@ public class OrderMapper {
         
         try {
             Connection con = Connector.connection();
-            String SQL = "INSERT INTO orders VALUES (NULL, ?, ?, ?, ?, false)";
+            String SQL = "INSERT INTO useradmin.orders VALUES (NULL, ?, ?, ?, ?, false)";
             PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS );
             ps.setInt( 1, order.getUserId() );
             ps.setInt( 2, order.getLength() );
@@ -35,7 +35,7 @@ public class OrderMapper {
         try
         {
             Connection con = Connector.connection();
-            String SQL = "DELETE FROM orders WHERE orderid = ?";
+            String SQL = "DELETE FROM useradmin.orders WHERE orderid = ?";
             PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS );
 
             ps.setInt(1, order.getOrderId());  
@@ -55,7 +55,7 @@ public class OrderMapper {
         {
             Connection con = Connector.connection();
 
-            String SQL = "SELECT * from orders where orderid = ?";
+            String SQL = "SELECT * from useradmin.orders where orderid = ?";
             PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS );
             ps.setInt(1, id);
             ResultSet resultset = ps.executeQuery();
@@ -86,7 +86,7 @@ public class OrderMapper {
         try
         {
             Connection con = Connector.connection();
-            String SQL = "SELECT * from orders";
+            String SQL = "SELECT * from useradmin.orders";
             PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS );
             ResultSet resultset = ps.executeQuery();
             
@@ -118,7 +118,7 @@ public class OrderMapper {
         ArrayList<Order> orders = new ArrayList();
         try {
             Connection con = Connector.connection();
-            String SQL = "SELECT * from orders where userid = ?";
+            String SQL = "SELECT * from useradmin.orders where userid = ?";
             PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
             ps.setInt(1, id);
 

@@ -16,15 +16,13 @@
     </head>
     <body>
         <%@include file="../includes/topmenu.jsp" %>
-        
-        
-        <h1>Hello World!</h1>
-        
+
+
         <h1>All existing orders</h1>
         <p>Below you can see all orders from all users<br> 
-           You can also change the delivery status.
+            You can also change the delivery status.
         </p>
-        
+
         <%OrderMapper dm = new OrderMapper(); %>
         <% ArrayList<Order> orders = dm.getAllOrders(); %>
         <div class="orderTable2">   
@@ -37,19 +35,18 @@
                     <th>Height</th>
                     <th>Delivered</th>
                 </tr>
-                
-                 <%
-                for(Order o : orders)
-                { %>
-                    <tr>
-                    <td> <%= o.getOrderId() %> </td>  
-                    <td> <%= o.getUserId() %> </td>  
-                    <td> <%= o.getLength() %> </td>
-                    <td> <%= o.getDepth() %> </td>  
-                    <td> <%= o.getHeight() %> </td>  
-                    <td> <%= o.isDelivered() %> kr.</td>                                    
+
+                <%
+                     for (Order o : orders) {%>
+                <tr>
+                    <td> <%= o.getOrderId()%> </td>  
+                    <td> <%= o.getUserId()%> </td>  
+                    <td> <%= o.getLength()%> </td>
+                    <td> <%= o.getDepth()%> </td>  
+                    <td> <%= o.getHeight()%> </td>  
+                    <td> <% if (o.isDelivered() == true) { %> in transit <%} else { %> not in transit yet <% } %></td>
                 </tr> 
-                <% } %>
+                <% }%>
             </table>
         </div>
     </body>
