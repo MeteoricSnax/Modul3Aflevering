@@ -55,7 +55,7 @@ public class OrderMapper {
         {
             Connection con = Connector.connection();
 
-            String SQL = "SELECT * from orders";
+            String SQL = "SELECT * from orders where orderid = ?";
             PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS );
             ps.setInt(1, id);
             ResultSet resultset = ps.executeQuery();
@@ -114,5 +114,34 @@ public class OrderMapper {
         
     } 
      
-    
+    public static ArrayList<Order> getAllCustomerOrders(int id) throws ClassNotFoundException {
+        ArrayList<Order> orders = new ArrayList();
+        try {
+            Connection con = Connector.connection();
+            String SQL = "SELECT * from orders where userid = ?";
+            PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
+            ps.setInt(1, id);
+
+            ResultSet resultset = ps.executeQuery();
+
+            while (resultset.next()) {
+                int orderid = resultset.getInt("orderid");
+                int userid = resultset.getInt("userid");
+                int length = resultset.getInt("length");
+                int depth = resultset.getInt("depth");
+                int height = resultset.getInt("height");
+                boolean delivered = resultset.getBoolean("delivered");
+
+                Order o = new Order(orderid, userid, length, depth, height, delivered);
+
+                orders.add(o);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return orders;
+
+    }
 }
