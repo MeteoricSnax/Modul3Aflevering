@@ -4,6 +4,9 @@
     Author     : kasper
 --%>
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="FunctionLayer.Order"%>
+<%@page import="DBAccess.OrderMapper"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,9 +15,12 @@
         <title>Employee home page</title>
     </head>
     <body>
+        <%@include file="../includes/topmenu.jsp" %>
+        <h1>logged in as <%=session.getAttribute("role")%>: <%=session.getAttribute("email")%>. </h1>
         
-        <h1>Hello <%=request.getParameter( "email")%> </h1>
-        <p>Logged in as <%=session.getAttribute("role")%>: <%=session.getAttribute("email")%>.</p>
+        <a href="FrontController?command=logout" class="button">Log Out</a>
+        
+        
         
     </body>
 </html>

@@ -12,6 +12,10 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <% 
+            
+            %>
+        <%@include file="../includes/topmenu.jsp" %>
         <h1>Sådan bestiller du et legohus</h1>
         her er lidt tekst.
         

@@ -13,7 +13,7 @@
     </head>
     <body>
         
-        <%@include file="includes/menu.jsp" %>
+        <%@include file="/includes/topmenu.jsp" %>
         
         <h1>Welcome to Sem 2</h1>
         

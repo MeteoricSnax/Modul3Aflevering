@@ -22,7 +22,7 @@ public class LogOut extends Command {
     String execute( HttpServletRequest request, HttpServletResponse response ) throws LoginSampleException {
         HttpSession session = request.getSession();
         session.invalidate();
-        return "register";
+        return "index";
     }
     
 }

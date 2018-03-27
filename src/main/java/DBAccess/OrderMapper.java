@@ -3,11 +3,13 @@ package DBAccess;
 import FunctionLayer.Order;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 public class OrderMapper {
-
+    
     public static void createOrder( Order order ) throws ClassNotFoundException, SQLException {
         
         
@@ -48,5 +50,69 @@ public class OrderMapper {
 
         return false;
     }
+    public Order getOrder(int id) throws ClassNotFoundException{
+        try
+        {
+            Connection con = Connector.connection();
+
+            String SQL = "SELECT * from orders";
+            PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS );
+            ps.setInt(1, id);
+            ResultSet resultset = ps.executeQuery();
+            
+            while (resultset.next())
+            {
+                int orderid = resultset.getInt("orderid");
+                int userid = resultset.getInt("userid");
+                int length  = resultset.getInt("length");
+                int depth = resultset.getInt("depth");
+                int height = resultset.getInt("height");
+                boolean delivered = resultset.getBoolean("delivered");
+
+                return new Order(orderid, userid, length, depth, height, delivered);
+            }
+
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+    
+    public static ArrayList<Order> getAllOrders() throws ClassNotFoundException {
+        ArrayList<Order> orders = new ArrayList();
+        try
+        {
+            Connection con = Connector.connection();
+            String SQL = "SELECT * from orders";
+            PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS );
+            ResultSet resultset = ps.executeQuery();
+            
+            while (resultset.next())
+            {
+                int orderid = resultset.getInt("orderid");
+                int userid = resultset.getInt("userid");
+                int length  = resultset.getInt("length");
+                int depth = resultset.getInt("depth");
+                int height = resultset.getInt("height");
+                boolean delivered = resultset.getBoolean("delivered");
+
+                Order o = new Order(orderid, userid, length, depth, height, delivered);
+
+                orders.add(o);
+            }
+            
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+
+        return orders;
+        
+    } 
+     
     
 }

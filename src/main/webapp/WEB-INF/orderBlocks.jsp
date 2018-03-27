@@ -14,7 +14,7 @@
     </head>
     <body>
         <%User user = (User) session.getAttribute("user");%> 
-        <%@include file="includes/topmenu.jsp" %>
+        <%@include file="../includes/topmenu.jsp" %>
         <h1>Order Blocks here</h1>
         <p>Logged in as: <%=session.getAttribute("email")%>.</p>
         
@@ -23,12 +23,12 @@
              Height and Length min value is set to 5
              Id = userid
         --%>
-        <form action="ProductControl" method="post" id="createOrder">
+        <form action="FrontController" method="post" id="createOrder">
             <input type="hidden" name="userid" value ="<%= user.getId() %>" />
             <input type="number" name="length" placeholder="Length" min="5" max="100" required />
             <input type="number" name="depth" placeholder="Depth" min="5" max="100" required />
             <input type="number" name="height" placeholder="Height" min="1" max="100" required />
-            <input type="hidden" name="origin" value="create" />
+            <input type="hidden" name="command" value="productv2" />
             <br>
             <input type="submit" value="CREATE ORDER" class="button2" />
         </form>

@@ -5,25 +5,19 @@
  */
 package PresentationLayer;
 
-import FunctionLayer.LogicFacade;
 import FunctionLayer.LoginSampleException;
-import FunctionLayer.User;
-import PresentationLayer.Command;
-import PresentationLayer.Command;
-import PresentationLayer.Command;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Jesper Outzen
  */
-public class Help extends Command {
-    
+public class Employeepage extends Command {
+
     @Override
-    String execute( HttpServletRequest request, HttpServletResponse response ) throws LoginSampleException {
-        return "help";
+    String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
+        return "employeepage";
     }
     
 }
