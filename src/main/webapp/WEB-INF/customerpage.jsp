@@ -15,8 +15,6 @@
         <h1>Welcome <%=session.getAttribute("email")%>! </h1>
         
         
-        To logout press here:
-        <a href="FrontController?command=logout" class="button">Log Out</a>
 
  
         

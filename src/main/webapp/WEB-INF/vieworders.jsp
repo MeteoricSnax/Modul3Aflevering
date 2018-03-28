@@ -33,16 +33,33 @@
                 </tr>
 
                 <%
-                     for (Order o : orders) {%>
-                <tr>
-                    <td> <%= o.getOrderId()%> </td>  
-                    <td> <%= o.getUserId()%> </td>  
-                    <td> <%= o.getLength()%> </td>
-                    <td> <%= o.getDepth()%> </td>  
-                    <td> <%= o.getHeight()%> </td>  
-                    <td> <% if (o.isDelivered() == true) { %> in transit <%} else { %> not in transit yet <% } %></td>
-                </tr> 
+                    for (Order o : orders) {%>
+
+
+
+
+                
+
+
+
+
+                    <form action="FrontController" method="post" id="sendOrder">
+                        <input type="hidden" name="command" value="sendOrder"
+                    <tr>
+                        <td> <%= o.getOrderId()%> </td>  
+                        <td> <%= o.getUserId()%> </td>  
+                        <td> <%= o.getLength()%> </td>
+                        <td> <%= o.getDepth()%> </td>  
+                        <td> <%= o.getHeight()%> </td>  
+                        <td> <% if (o.isDelivered() == true) { %> in transit <%} else { %> 
+                            <input type="hidden" name="id" value="<%=o.getOrderId() %>">
+                            <input type="submit" value="Send Order" class="button2"> <% } %></td>
+                    </tr>
+   
+                </form> 
+                    
                 <% }%>
+
             </table>
         </div>
     </body>

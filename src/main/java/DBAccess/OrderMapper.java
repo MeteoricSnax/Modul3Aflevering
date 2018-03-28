@@ -144,7 +144,7 @@ public class OrderMapper {
         return orders;
 
     }
-    public void sendOrder(int id) throws ClassNotFoundException{
+    public static void sendOrder(int id) throws ClassNotFoundException{
         try
         {
             Connection con = Connector.connection();

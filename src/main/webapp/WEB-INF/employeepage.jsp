@@ -17,8 +17,7 @@
     <body>
         <%@include file="../includes/topmenu.jsp" %>
         <h1>logged in as <%=session.getAttribute("role")%>: <%=session.getAttribute("email")%>. </h1>
-        
-        <a href="FrontController?command=logout" class="button">Log Out</a>
+       
         
         
         

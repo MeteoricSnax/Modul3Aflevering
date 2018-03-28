@@ -4,12 +4,12 @@ package FunctionLayer;
 
 public class BlockList {
     
-    public int getBlock4(int length, int depth, int heigth) {
+    public static int getBlock4(int length, int depth, int heigth) {
         int block4 = (length / 4) + ((depth - 4) / 4) * heigth;
         return block4;
     }
 
-    public int getBlock2(int length, int depth, int heigth) {
+    public static int  getBlock2(int length, int depth, int heigth) {
         int temp1 = (length % 4) + ((depth - 4) % 4);
         int temp2 = (depth - 4) % 4;
         int block2 = 0;
@@ -21,7 +21,7 @@ public class BlockList {
         return block2;
     }
 
-    public int getBlock1(int length, int depth, int heigth) {
+    public static int getBlock1(int length, int depth, int heigth) {
         int temp1 = (length % 4) + ((depth - 4) % 4);
         int temp2 = (depth - 4) % 4;
         int block1 = 0;

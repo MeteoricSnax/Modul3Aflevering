@@ -1,4 +1,5 @@
 
+<%@page import="FunctionLayer.BlockList"%>
 <%@page import="FunctionLayer.User"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="FunctionLayer.Order"%>
@@ -27,9 +28,9 @@
                 <tr>
                     <th>Order ID</th>
                     <th>User ID</th>
-                    <th>Length</th>
-                    <th>Depth</th>
-                    <th>Height</th>
+                    <th>Block1</th>
+                    <th>Block2</th>
+                    <th>Block4</th>
                     <th>Delivered</th>
                 </tr>
                 
@@ -37,12 +38,12 @@
                 for(Order o : order)
                 { %>
                     <tr>
-                    <td> <%= o.getOrderId() %> </td>  
-                    <td> <%= o.getUserId() %> </td>  
-                    <td> <%= o.getLength() %> </td>
-                    <td> <%= o.getDepth() %> </td>  
-                    <td> <%= o.getHeight() %> </td>  
-                    <td> <% if(o.isDelivered() == true){ %> in transit <%} else{ %> not in transit yet <% } %></td>                                    
+                    <td> <%= o.getOrderId() %> </td>
+                    <td> <%= o.getUserId() %> </td>
+                    <td> <%= BlockList.getBlock1(o.getLength(), o.getDepth(), o.getHeight()) %> </td>
+                    <td> <%= BlockList.getBlock2(o.getLength(), o.getDepth(), o.getHeight()) %> </td>
+                    <td> <%= BlockList.getBlock4(o.getLength(), o.getDepth(), o.getHeight()) %> </td>
+                    <td> <% if(o.isDelivered() == true){ %> in transit <%} else{ %> not in transit yet <% } %></td>
                 </tr> 
                 <% } %>
             </table>

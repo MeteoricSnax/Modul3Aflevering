@@ -1,3 +1,8 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <style>
     *{
         box-sizing: border-box;
@@ -32,8 +37,10 @@
     <div class="topMenu">
     <a href="FrontController?command=employeepage" class="button">Home</a>
     <a href="FrontController?command=orderBlocks" class="button">Place Order</a>
-    <a href="FrontController?command=vieworders" class="button">View Orders</a>
+    <a href="FrontController?command=vieworders" class="button">Manage Orders</a>
     <a href="FrontController?command=help"  class ="button">Help</a>
+    <a href="FrontController?command=logout"> <span class="glyphicon glyphicon-log-out"> </span> Log out</button></a>
+    
 </div>
 <%}else{%>
 <div class="topMenu">
@@ -41,6 +48,7 @@
     <a href="FrontController?command=orderBlocks" class="button">Place Order</a>
     <a href="FrontController?command=customerorders" class="button">Your Orders</a>
     <a href="FrontController?command=help"  class ="button">Help</a>
+    <a href="FrontController?command=logout"> <span class="glyphicon glyphicon-log-out"> </span> Log out</button></a>
 </div>
 <%}%>
 

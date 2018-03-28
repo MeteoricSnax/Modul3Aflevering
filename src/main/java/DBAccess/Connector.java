@@ -18,7 +18,7 @@ public class Connector {
 //    private static final String USERNAME = "doorkeeper";
     private static final String USERNAME = "root";
 //    private static final String PASSWORD = "bank3*andyouarein";
-    private static final String PASSWORD = "admin";
+    private static final String PASSWORD = "Ch3c42a1311!";
 
     private static Connection singleton;
 
