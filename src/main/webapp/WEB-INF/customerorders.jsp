@@ -1,18 +1,15 @@
-<%-- 
-    Document   : customerOrders
-    Created on : Mar 27, 2018, 11:25:05 PM
-    Author     : Snax
---%>
+
 <%@page import="FunctionLayer.User"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="FunctionLayer.Order"%>
-<%@page import="DBAccess.OrderMapper"%>
+<%@page import="FunctionLayer.LogicFacade"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>CustomerOrders</title>
     </head>
     <body>
         
@@ -24,8 +21,7 @@
            You can also change the delivery status.
         </p>
         <%User user = (User) session.getAttribute("user");%> 
-        <%OrderMapper dm = new OrderMapper(); %>
-        <% ArrayList<Order> orders = dm.getAllCustomerOrders(user.getId()); %>
+        <% ArrayList<Order> order = LogicFacade.getAllCustomerOrders(user.getId()); %>
         <div class="orderTable2">   
             <table class="table">
                 <tr>
@@ -38,7 +34,7 @@
                 </tr>
                 
                  <%
-                for(Order o : orders)
+                for(Order o : order)
                 { %>
                     <tr>
                     <td> <%= o.getOrderId() %> </td>  

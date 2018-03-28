@@ -1,24 +1,19 @@
-<%-- 
-    Document   : index
-    Created on : Aug 22, 2017, 2:01:06 PM
-    Author     : kasper
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Welcome page</title>
     </head>
     <body>
-        
+
         <%@include file="/includes/topmenu.jsp" %>
-        
-        <h1>Welcome to Sem 2</h1>
-        
-        <p>Logged in as: <%=session.getAttribute("email")%>.</p>
-        
+
+        <h1>Welcome to Legoblocks</h1>
+        <p>please sign in to order blocks</p>
         <table>
             <tr>Login
                 <td>
@@ -51,14 +46,14 @@
                 </td>
             </tr>
         </table>
-        
+
         <a href="FrontController?command=help" >Få hjælp til din bestilling!</a>
-        
-        <% String error = (String) request.getAttribute( "error");
-           if ( error != null) { %>
-           <H2>Error!!</h2>
-           <p><%= error %>
-        <% }
-        %>
+
+        <% String error = (String) request.getAttribute("error");
+            if (error != null) {%>
+        <H2>Error!!</h2>
+        <p><%= error%>
+            <% }
+            %>
     </body>
 </html>

@@ -1,8 +1,3 @@
-<%-- 
-    Document   : customerpage
-    Created on : Aug 22, 2017, 2:33:37 PM
-    Author     : kasper
---%>
 
 <%@page import="FunctionLayer.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -16,10 +11,11 @@
 
     <body>
         <%@include file="../includes/topmenu.jsp" %>
-        <h1>sessiontest: <%=session.getAttribute("id")  %> </h1>
+                
+        <h1>Welcome <%=session.getAttribute("email")%>! </h1>
         
-        <h1>logged in as <%=session.getAttribute("role")%>: <%=session.getAttribute("email")%>. </h1>
         
+        To logout press here:
         <a href="FrontController?command=logout" class="button">Log Out</a>
 
  

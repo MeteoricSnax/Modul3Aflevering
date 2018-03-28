@@ -24,9 +24,12 @@ public class LogicFacade {
         OrderMapper.createOrder(order);
     }
     
-    public static ArrayList<Order> getAllOrders(Order order) throws ClassNotFoundException{
-        ArrayList<Order> orders = new ArrayList();
-        OrderMapper.getAllOrders();
+    public static ArrayList<Order> getAllOrders() throws ClassNotFoundException{
+        ArrayList<Order> orders = OrderMapper.getAllOrders();
+        return orders;
+    }
+    public static ArrayList<Order> getAllCustomerOrders(int id) throws ClassNotFoundException{
+        ArrayList<Order> orders = OrderMapper.getAllCustomerOrders(id);
         return orders;
     }
 

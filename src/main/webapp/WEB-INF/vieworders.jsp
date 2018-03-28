@@ -1,12 +1,9 @@
-<%-- 
-    Document   : vieworders
-    Created on : 27-03-2018, 13:42:14
-    Author     : Jesper Outzen
---%>
+
 
 <%@page import="java.util.ArrayList"%>
 <%@page import="FunctionLayer.Order"%>
-<%@page import="DBAccess.OrderMapper"%>
+<%@page import="FunctionLayer.LogicFacade"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -23,8 +20,7 @@
             You can also change the delivery status.
         </p>
 
-        <%OrderMapper dm = new OrderMapper(); %>
-        <% ArrayList<Order> orders = dm.getAllOrders(); %>
+        <% ArrayList<Order> orders = LogicFacade.getAllOrders(); %>
         <div class="orderTable2">   
             <table class="table">
                 <tr>

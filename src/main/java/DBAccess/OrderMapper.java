@@ -144,4 +144,20 @@ public class OrderMapper {
         return orders;
 
     }
+    public void sendOrder(int id) throws ClassNotFoundException{
+        try
+        {
+            Connection con = Connector.connection();
+            String SQL = "update useradmin.orders set delivered = true where orderid = ?";
+            PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS );
+
+            ps.setInt(1, id);  
+            ps.executeUpdate();
+
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+    }
 }

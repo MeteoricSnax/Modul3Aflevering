@@ -33,12 +33,14 @@
     <a href="FrontController?command=employeepage" class="button">Home</a>
     <a href="FrontController?command=orderBlocks" class="button">Place Order</a>
     <a href="FrontController?command=vieworders" class="button">View Orders</a>
+    <a href="FrontController?command=help"  class ="button">Help</a>
 </div>
 <%}else{%>
 <div class="topMenu">
     <a href="FrontController?command=customerpage" class="button">Home</a>
     <a href="FrontController?command=orderBlocks" class="button">Place Order</a>
     <a href="FrontController?command=customerorders" class="button">Your Orders</a>
+    <a href="FrontController?command=help"  class ="button">Help</a>
 </div>
 <%}%>
 
